@@ -3,6 +3,7 @@ import { fastifyCors } from "@fastify/cors";
 import dotenv from "dotenv";
 import fastify from "fastify";
 import { test } from "./routes/test";
+import { citiesRoute } from "./routes/citites-route";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.register(fastifyCors, {
 });
 
 app.register(test);
+app.register(citiesRoute);
 
 app.listen(
   { host: "0.0.0.0", port: Number(process.env.PORT) },
