@@ -20,6 +20,7 @@ app.register(fastifyCors, {
     process.env.URL_ACCESS3!,
     process.env.URL_ACCESS4!,
   ],
+  credentials: true,
 });
 
 app.register(test);
