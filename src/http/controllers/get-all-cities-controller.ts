@@ -10,10 +10,17 @@ export const getAllCitiesController = async (
   if (status === "success") {
     return reply
       .status(201)
-      .send({ message: "Cidades encontradas com sucesso!", data: data });
+      .send({
+        status: "success",
+        message: "Cidades encontradas com sucesso!",
+        data: data,
+      });
   } else {
     return reply
       .status(400)
-      .send({ message: "Ocorreu um erro ao tentar encontrar as cidades." });
+      .send({
+        status: "error",
+        message: "Ocorreu um erro ao tentar encontrar as cidades.",
+      });
   }
 };
